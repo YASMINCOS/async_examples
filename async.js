@@ -1,3 +1,20 @@
+//callback
+
+function buscarUsuario(callback){
+    console.log("buscando usuario");
+    setTimeout(() => {
+        const usuario = {id:1, nome:"maria"};
+        console.log("usuario carregado");
+        callback(usuario);
+    },2000);
+
+    console.log("continua");
+}
+
+buscarUsuario((usuario) =>{
+    console.log("usuario", usuario);
+})
+//promise
 function buscarUsuario(){
     console.log("Buscando usuario");
 return new Promise ((resolve, reject)=>{
